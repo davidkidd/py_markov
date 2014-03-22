@@ -11,14 +11,17 @@ Try loading a file into a Markov object, then generate 30 words of new text:
 		  
 	print m.get_text(30)
 
-Alternatively, load text directly into an empty Markov object:
+Alternatively, add multiple text sources:
 	
 	from markov import Markov
-	
+
 	myCorpusText = "..."
-	  
+  
 	m = Markov()
-	
-	m.load_text(myCorpusText)
-	
+
+	m.add_text(myCorpusText)
+	m.add_text(myOtherCorpusText)
+
+	m.build()
+
 	print m.get_text(30)
